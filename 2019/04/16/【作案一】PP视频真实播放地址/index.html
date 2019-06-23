@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="记录破解视频真实地址的一次作案经历… 作案动机想看PP体育的足球 热身泡一杯茶、剥一块大白兔奶糖、放一首大悲咒…  作案工具   名称 说明     Edge 浏览器   Adobe Flash Builder 4.7 RIA IDE   Adobe Flash Professional CS5.5 IDE   JPEXS Free Flash Decompiler SWF反编译   Visual">
+<meta name="keywords" content="算法,逆向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【犯罪现场一】PP视频播放地址获取">
+<meta property="og:url" content="http://fafaboom.com/2019/04/16/【作案一】PP视频真实播放地址/index.html">
+<meta property="og:site_name" content="Boom">
+<meta property="og:description" content="记录破解视频真实地址的一次作案经历… 作案动机想看PP体育的足球 热身泡一杯茶、剥一块大白兔奶糖、放一首大悲咒…  作案工具   名称 说明     Edge 浏览器   Adobe Flash Builder 4.7 RIA IDE   Adobe Flash Professional CS5.5 IDE   JPEXS Free Flash Decompiler SWF反编译   Visual">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424011029_b2bc9a41f4846befdcd3f46615fcf08f.png">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424012516_6addf011405950469be6568eaf8459d1.png">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424014413_2cca4f8bb1a35908736add5bbd72bd49.png">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424015633_face992bb133c9fd530c185aae7b8ef8.png">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424023940_9f33ef2f82c6fec69cd5449425b229a2.png">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424042646_b1e2dd2eb549d01d9fec7cf716d224ad.png">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424024947_0d3643a3dc3153d0c7fe6c070858b1fe.png">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424025044_e7a1cd10763ce61cb1b189dcd1e00bf5.png">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424043957_b6ce7cea41701201b7dad2019a299266.png">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424025421_e19aac384c33e787ed50a13e1f0c0412.png">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424025311_ad9c38ac9828cb9bd6173ad82d623f09.png">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424025337_a0b891f24c94ec009fe7c0a13e7085f9.png">
+<meta property="og:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424025121_1d337669e578322a1d620b2e83595d11.png">
+<meta property="og:updated_time" content="2019-06-23T02:30:41.949Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【犯罪现场一】PP视频播放地址获取">
+<meta name="twitter:description" content="记录破解视频真实地址的一次作案经历… 作案动机想看PP体育的足球 热身泡一杯茶、剥一块大白兔奶糖、放一首大悲咒…  作案工具   名称 说明     Edge 浏览器   Adobe Flash Builder 4.7 RIA IDE   Adobe Flash Professional CS5.5 IDE   JPEXS Free Flash Decompiler SWF反编译   Visual">
+<meta name="twitter:image" content="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424011029_b2bc9a41f4846befdcd3f46615fcf08f.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://fafaboom.com/2019/04/16/【作案一】PP视频真实播放地址/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>【犯罪现场一】PP视频播放地址获取 | Boom</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Boom</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-books">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>书单</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-ppts">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/ppts/" rel="section"><i class="menu-item-icon fa fa-fw fa-slideshare"></i> <br>分享</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fafaboom.com/2019/04/16/【作案一】PP视频真实播放地址/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="平头哥">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/pingtouge.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Boom">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【犯罪现场一】PP视频播放地址获取
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-16 14:38:13" itemprop="dateCreated datePublished" datetime="2019-04-16T14:38:13+08:00">2019-04-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-23 10:30:41" itemprop="dateModified" datetime="2019-06-23T10:30:41+08:00">2019-06-23</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/逆向/" itemprop="url" rel="index"><span itemprop="name">逆向</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/04/16/【作案一】PP视频真实播放地址/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/16/【作案一】PP视频真实播放地址/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>记录破解视频真实地址的一次作案经历…</p>
+<h3 id="作案动机"><a href="#作案动机" class="headerlink" title="作案动机"></a>作案动机</h3><p>想看PP体育的足球</p>
+<h3 id="热身"><a href="#热身" class="headerlink" title="热身"></a>热身</h3><p>泡一杯茶、剥一块大白兔奶糖、放一首大悲咒…</p>
+<hr>
+<h4 id="作案工具"><a href="#作案工具" class="headerlink" title="作案工具"></a>作案工具</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Edge</td>
+<td style="text-align:center">浏览器</td>
+</tr>
+<tr>
+<td style="text-align:center">Adobe Flash Builder 4.7</td>
+<td style="text-align:center">RIA IDE</td>
+</tr>
+<tr>
+<td style="text-align:center">Adobe Flash Professional CS5.5</td>
+<td style="text-align:center">IDE</td>
+</tr>
+<tr>
+<td style="text-align:center">JPEXS Free Flash Decompiler</td>
+<td style="text-align:center">SWF反编译</td>
+</tr>
+<tr>
+<td style="text-align:center">Visual Studio Code</td>
+<td style="text-align:center">文本编辑器</td>
+</tr>
+<tr>
+<td style="text-align:center">Beyond Compare</td>
+<td style="text-align:center">文件比较</td>
+</tr>
+</tbody>
+</table>
+<h4 id="SWF脱壳"><a href="#SWF脱壳" class="headerlink" title="SWF脱壳"></a>SWF脱壳</h4><blockquote>
+<p>看雪精华帖：<a href="https://bbs.pediy.com/thread-190682.htm" target="_blank" rel="noopener"><strong>土X视频播放器的swf解密过程</strong></a></p>
+</blockquote>
+<h4 id="常见套路"><a href="#常见套路" class="headerlink" title="常见套路"></a>常见套路</h4><p>现在每行都有自己的套路，比如拍电影，只要出现武装直升机就必然会坠毁，出现火车那一定会出现铁轨被炸或者火车翻轨的情形。视频播放也不例外，常见的有WAP H5播放（一般有20分钟的时长限制）、P2P播放（这个也是辅助）、ts播放（HLS或DASH）、分段MP4播放（Flash或H5）。PPTV就采用了分段MP4播放+P2P辅助的方法，我们找出分段播放地址再根据关键信息反编译swf签名算法，这样问题就迎刃而解了。</p>
+<h3 id="分析播放过程"><a href="#分析播放过程" class="headerlink" title="分析播放过程"></a>分析播放过程</h3><hr>
+<h4 id="找出播放地址"><a href="#找出播放地址" class="headerlink" title="找出播放地址"></a>找出播放地址</h4><p>这次选的是老版动画片<a href="http://v.pptv.com/show/0D7vbdU7qiblMyjI.html" target="_blank" rel="noopener">《大闹天宫》</a>，在开发者模式中根据关键字或者文件大小找出视频的播放地址，实际上是一个分段mp4：  </p>
+<p><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424011029_b2bc9a41f4846befdcd3f46615fcf08f.png" alt="20190424011029_b2bc9a41f4846befdcd3f46615fcf08f.png"></p>
+<blockquote>
+<p><a href="http://112.25.6.111/3/780288/0/1ffdbae5fb399baefdd5e3fa133a166d.mp4?fpp.ver=1.3.0.24&amp;key=1bf06715373b569a99b7d8b9688eb29d&amp;k=2464894d4576ab1f5c4ab3d574d3b023-68d7-1556046145%26bppcataid%3D1&amp;type=web.fpp&amp;vvid=5d1285c6-7205-1121-1463-4abdaa3c61ed" target="_blank" rel="noopener">http://112.25.6.111/3/780288/0/1ffdbae5fb399baefdd5e3fa133a166d.mp4?fpp.ver=1.3.0.24&amp;key=1bf06715373b569a99b7d8b9688eb29d&amp;k=2464894d4576ab1f5c4ab3d574d3b023-68d7-1556046145%26bppcataid%3D1&amp;type=web.fpp&amp;vvid=5d1285c6-7205-1121-1463-4abdaa3c61ed</a>  </p>
+</blockquote>
+<p>播放地址说明： </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">112.25.6.111</td>
+<td style="text-align:center">视频CDN IP地址</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">视频分段序号</td>
+</tr>
+<tr>
+<td style="text-align:center">780288</td>
+<td style="text-align:center">偏移量(可选)</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">固定值(可选)</td>
+</tr>
+<tr>
+<td style="text-align:center">1ffdbae5fb399baefdd5e3fa133a166d.mp4</td>
+<td style="text-align:center">视频文件名</td>
+</tr>
+<tr>
+<td style="text-align:center">fpp.ver</td>
+<td style="text-align:center">播放器版本号(可选)</td>
+</tr>
+<tr>
+<td style="text-align:center">key</td>
+<td style="text-align:center">根据服务器时间加密的一个key(可选)</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>k</strong></td>
+<td style="text-align:center">根据视频信息加密的一个key，需要解密，主要防盗链</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>type</strong></td>
+<td style="text-align:center">web.fpp(平台渠道)</td>
+</tr>
+<tr>
+<td style="text-align:center">vvid</td>
+<td style="text-align:center">播放唯一标识(可选)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>排查法，正常播放的参数只需要<code>k</code>和<code>type</code>，任务目标明确，就是找到目标地址的来源及生成规则。  </p>
+</blockquote>
+<p><strong>任务确认：</strong>  </p>
+<ul>
+<li><code>k</code>值计算  </li>
+<li><code>key</code>值计算</li>
+</ul>
+<h4 id="视频地址是谁发出来的"><a href="#视频地址是谁发出来的" class="headerlink" title="视频地址是谁发出来的"></a>视频地址是谁发出来的</h4><p>猜测下应该是swf内部发起的播放串请求，观察上图中的Referer，发现是一个叫“VodCore.swf”的文件发出的，Okay，我们盘它，用本文工具中的FFdec直接搜索表中的参数，找到了目标地址的构造方法。</p>
+<p><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424012516_6addf011405950469be6568eaf8459d1.png" alt="20190424012516_6addf011405950469be6568eaf8459d1.png"></p>
+<h4 id="定位k值"><a href="#定位k值" class="headerlink" title="定位k值"></a>定位k值</h4><p>简略跟了下调用，发现这个swf主要封装了视频播放的数据请求模块（有兴趣的自行深入了解下），外部接口在主类的<code>createMultiResolutionVodPlayManager()</code>等，这里对应<code>k</code>的传递参数是<code>deKey</code>。说明还有其他swf封装了使用场景，目光转到另一个swf文件上“player4player2.swf”，直接搜索<code>deKey</code>，bingo，找到目标场景。</p>
+<p><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424014413_2cca4f8bb1a35908736add5bbd72bd49.png" alt="20190424014413_2cca4f8bb1a35908736add5bbd72bd49.png"></p>
+<h4 id="计算k值"><a href="#计算k值" class="headerlink" title="计算k值"></a>计算k值</h4><p>不难发现，这里已经能看到<code>k</code>是基于一些视频信息解密而来。</p>
+<blockquote>
+<p>playAppKey: <strong>V8oo0Or1f047NaiMTxK123LMFuINTNeI</strong><br><strong>todo: 视频dt信息</strong>  </p>
+</blockquote>
+<p>先记录下这个参数，接着定位<code>Decrypt</code>方法，在主类里面找到了<code>Global.getInstance()[&quot;crypto&quot;]</code>的定义，是一个典型的<code>ByteArray</code>式的内嵌swf。</p>
+<p><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424015633_face992bb133c9fd530c185aae7b8ef8.png" alt="20190424015633_face992bb133c9fd530c185aae7b8ef8.png"></p>
+<h4 id="脱壳swf"><a href="#脱壳swf" class="headerlink" title="脱壳swf"></a>脱壳swf</h4><p>看来官方对核心算法做了一些的防护措施，只是从<code>loader</code>加载逻辑来看，几乎是透明的。<br>开始用的<code>Adobe Flash Professional CS5.5</code>，后面换了<code>Adobe Flash Builder 4.7</code>（建议使用），这里两份代码都贴出来。</p>
+<p><code>Adobe Flash Professional CS5.5</code><br>新建一个flash项目后，在代码片段中写入，然后<code>Ctrl+Enter</code>运行，保存swf。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">import</span> mx.core.ByteArrayAsset;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> loader:Loader= <span class="keyword">new</span> Loader();<span class="comment">//创建一个Loader实例</span></span><br><span class="line"><span class="keyword">var</span> req:URLRequest= <span class="keyword">new</span> URLRequest(<span class="string">"player4player2.swf"</span>);<span class="comment">//所需要外部swf的路径</span></span><br><span class="line">loader.load(req);<span class="comment">//载入</span></span><br><span class="line">loader.contentLoaderInfo.addEventListener(Event.COMPLETE, completeHandler);</span><br><span class="line">loader.contentLoaderInfo.addEventListener(Event.INIT, initHandler);</span><br><span class="line"><span class="comment">//添加监听，注意要用contentLoaderInfo</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">initHandler</span><span class="params">(e:Event)</span>:void </span>&#123;</span><br><span class="line">    trace(<span class="string">"开始载入了"</span>);</span><br><span class="line">    trace(loader.content);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">completeHandler</span><span class="params">(e:Event)</span>:void </span>&#123;</span><br><span class="line">    trace(<span class="string">"载入完成"</span>);</span><br><span class="line">    <span class="keyword">var</span> myClass:Class = loader.contentLoaderInfo.applicationDomain.getDefinition(<span class="string">"VodFacade_Crypto"</span>) <span class="keyword">as</span> Class;</span><br><span class="line">    <span class="keyword">var</span> byteArray:ByteArrayAsset= <span class="keyword">new</span> myClass <span class="keyword">as</span> ByteArrayAsset;</span><br><span class="line">    <span class="keyword">var</span> fr:FileReference = <span class="keyword">new</span> FileReference();</span><br><span class="line">    fr.save(byteArray, <span class="string">"VodFacade_Crypto.swf"</span>)</span><br><span class="line">    trace(loader.content);</span><br><span class="line">    addChild(loader);<span class="comment">//添加到舞台</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Adobe Flash Builder 4.7</code><br>新建一个Flex项目，运行。  </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">s:WindowedApplication</span> <span class="attr">xmlns:fx</span>=<span class="string">"http://ns.adobe.com/mxml/2009"</span></span></span><br><span class="line"><span class="tag">                       <span class="attr">xmlns:s</span>=<span class="string">"library://ns.adobe.com/flex/spark"</span></span></span><br><span class="line"><span class="tag">                       <span class="attr">xmlns:mx</span>=<span class="string">"library://ns.adobe.com/flex/mx"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">fx:Declarations</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 将非可视元素（例如服务、值对象）放在此处 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">fx:Declarations</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">fx:Script</span>&gt;</span></span><br><span class="line">        &lt;![CDATA[</span><br><span class="line">            import flash.display.Loader;</span><br><span class="line">            import flash.events.Event;</span><br><span class="line">            import flash.events.ProgressEvent;</span><br><span class="line">            import flash.net.URLRequest;</span><br><span class="line">            import mx.core.ByteArrayAsset;</span><br><span class="line">            private var byteArray:ByteArrayAsset;</span><br><span class="line"></span><br><span class="line">            private function init():void&#123;</span><br><span class="line">                var _loader:Loader = new Loader();</span><br><span class="line">                _loader.load(new URLRequest("player4player2.swf"));</span><br><span class="line">                _loader.contentLoaderInfo.addEventListener(Event.COMPLETE, swfComplete);</span><br><span class="line"></span><br><span class="line">                function swfProgress(event:ProgressEvent):void</span><br><span class="line">                &#123;</span><br><span class="line">                    trace(event.bytesLoaded/event.bytesTotal);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                function swfComplete(event:Event):void</span><br><span class="line">                &#123;</span><br><span class="line">                    var myClass:Class = _loader.contentLoaderInfo.applicationDomain.getDefinition("VodFacade_Crypto") as Class;</span><br><span class="line">                    byteArray = new myClass as ByteArrayAsset;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            private function onSaveClick():void</span><br><span class="line">            &#123;</span><br><span class="line">                var fr:FileReference = new FileReference();</span><br><span class="line">                fr.save(byteArray, "VodFacade_Crypto.swf"); </span><br><span class="line">            &#125;</span><br><span class="line">        ]]&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">fx:Script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mx:Button</span> <span class="attr">label</span>=<span class="string">"Save File"</span> <span class="attr">left</span>=<span class="string">"10"</span> <span class="attr">top</span>=<span class="string">"10"</span> <span class="attr">id</span>=<span class="string">"saveButton"</span> <span class="attr">click</span>=<span class="string">"onSaveClick()"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">s:WindowedApplication</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="任务：k值算法"><a href="#任务：k值算法" class="headerlink" title="任务：k值算法"></a>任务：k值算法</h4><p>在加密模块中找到<code>k</code>值的解密算法，nice，大功告成…一小半…<br><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424023940_9f33ef2f82c6fec69cd5449425b229a2.png" alt="20190424023940_9f33ef2f82c6fec69cd5449425b229a2.png"></p>
+<h4 id="任务：key值算法"><a href="#任务：key值算法" class="headerlink" title="任务：key值算法"></a>任务：key值算法</h4><p>分析思路和<code>k</code>一样：<br><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424042646_b1e2dd2eb549d01d9fec7cf716d224ad.png" alt="20190424042646_b1e2dd2eb549d01d9fec7cf716d224ad.png">  </p>
+<p>扫了一眼加密算法目的是生成一个32位的<code>key</code>，两部分组成，一部分根据服务器时间得到16个字符串，另一部分根据内置的一个<code>SERVER_KEY</code>得到16个字符串，两者<code>encrypt</code>后转化<code>Hex</code>的32位字符串。  </p>
+<h4 id="视频dt信息采集"><a href="#视频dt信息采集" class="headerlink" title="视频dt信息采集"></a>视频dt信息采集</h4><p>在计算<code>k</code>值的时候留了一个<code>todo</code>，实际上就是视频当前播放的分段信息，接下来寻找这些信息是从何而来，套路就不重复了。</p>
+<p><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424024947_0d3643a3dc3153d0c7fe6c070858b1fe.png" alt="20190424024947_0d3643a3dc3153d0c7fe6c070858b1fe.png"></p>
+<blockquote>
+<p><a href="http://web-play.pptv.com/webplay3-0-11718864.xml?zone=8&amp;pid=5701&amp;vvid=5d1285c6-7205-1121-1463-4abdaa3c61ed&amp;version=4&amp;username=&amp;param=type%3Dweb.fpp%26ahl_ver%3D1%26ahl_random%3D775c277357443d215f34683f42296025%26ahl_signa%3Daf47c8a74a981670fb8c0a29909fbb6a5b837b1a39f36f2813fcf81ac9b6af73%26userType%3D0%26o%3D0&amp;duration=6839&amp;isSports=0&amp;segment=167d65e8_167d67b0_1556031702&amp;o=0&amp;sl=1&amp;stime=879&amp;isIframe=0&amp;type=web.fpp&amp;pageUrl=http%3A%2F%2Fv.pptv.com%2Fshow%2F0D7vbdU7qiblMyjI.html&amp;salt=pv&amp;referrer=http%3A%2F%2Fsou.pptv.com%2Fcategory%2Ftypeid_1_sortType_score_pn_1_area_5_cataid_130&amp;kk=70ea3a194d7fea31373c0ead44435ed2-abb1-5cbf36e6&amp;suningDDP=1&amp;p_type=22&amp;vts=1&amp;r=1556032105053&amp;scver=1&amp;appplt=flp&amp;appid=pptv.flashplayer.vod&amp;appver=3.4.3.35&amp;nddp=1" target="_blank" rel="noopener">http://web-play.pptv.com/webplay3-0-11718864.xml?zone=8&amp;pid=5701&amp;vvid=5d1285c6-7205-1121-1463-4abdaa3c61ed&amp;version=4&amp;username=&amp;param=type%3Dweb.fpp%26ahl_ver%3D1%26ahl_random%3D775c277357443d215f34683f42296025%26ahl_signa%3Daf47c8a74a981670fb8c0a29909fbb6a5b837b1a39f36f2813fcf81ac9b6af73%26userType%3D0%26o%3D0&amp;duration=6839&amp;isSports=0&amp;segment=167d65e8_167d67b0_1556031702&amp;o=0&amp;sl=1&amp;stime=879&amp;isIframe=0&amp;type=web.fpp&amp;pageUrl=http%3A%2F%2Fv.pptv.com%2Fshow%2F0D7vbdU7qiblMyjI.html&amp;salt=pv&amp;referrer=http%3A%2F%2Fsou.pptv.com%2Fcategory%2Ftypeid_1_sortType_score_pn_1_area_5_cataid_130&amp;kk=70ea3a194d7fea31373c0ead44435ed2-abb1-5cbf36e6&amp;suningDDP=1&amp;p_type=22&amp;vts=1&amp;r=1556032105053&amp;scver=1&amp;appplt=flp&amp;appid=pptv.flashplayer.vod&amp;appver=3.4.3.35&amp;nddp=1</a></p>
+</blockquote>
+<p>直观感受下请求返回的内容，<code>dt</code>是啥样的？<br><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424025044_e7a1cd10763ce61cb1b189dcd1e00bf5.png" alt="20190424025044_e7a1cd10763ce61cb1b189dcd1e00bf5.png"></p>
+<p>Okay，一个不少，刚刚好…</p>
+<h4 id="任务：验证与实现"><a href="#任务：验证与实现" class="headerlink" title="任务：验证与实现"></a>任务：验证与实现</h4><p><code>实践才是检验真理的唯一标准。</code>左手握有<code>k</code>值解密算法，右手端着视频分段信息，hold得住？不可能，赶紧试试能否搞出文章开头播放地址中的<code>k</code>。</p>
+<p><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424043957_b6ce7cea41701201b7dad2019a299266.png" alt="20190424043957_b6ce7cea41701201b7dad2019a299266.png"></p>
+<p>还行，结果一致，js、python实现的，没有，自己动手吧！</p>
+<h3 id="构造webplay请求"><a href="#构造webplay请求" class="headerlink" title="构造webplay请求"></a>构造webplay请求</h3><p>这个步骤这里就不展开细说了，思路简单。</p>
+<blockquote>
+<p><strong>todo：<code>kk</code>字段，三连，图解</strong></p>
+</blockquote>
+<p><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424025421_e19aac384c33e787ed50a13e1f0c0412.png" alt="20190424025421_e19aac384c33e787ed50a13e1f0c0412.png"></p>
+<p><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424025311_ad9c38ac9828cb9bd6173ad82d623f09.png" alt="20190424025311_ad9c38ac9828cb9bd6173ad82d623f09.png"></p>
+<p><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424025337_a0b891f24c94ec009fe7c0a13e7085f9.png" alt="20190424025337_a0b891f24c94ec009fe7c0a13e7085f9.png"></p>
+<h3 id="drag请求"><a href="#drag请求" class="headerlink" title="drag请求"></a>drag请求</h3><p>在观察请求的时候发现一个<code>drag</code>的请求，记录下来，实际上就是视频的基本信息。</p>
+<blockquote>
+<p><a href="http://drag.g1d.net/1ffdbae5fb399baefdd5e3fa133a166d.mp40drag" target="_blank" rel="noopener">http://drag.g1d.net/1ffdbae5fb399baefdd5e3fa133a166d.mp40drag</a></p>
+</blockquote>
+<p><img src="https://blog2019-1259038936.cos.ap-shanghai.myqcloud.com/20190424025121_1d337669e578322a1d620b2e83595d11.png" alt="20190424025121_1d337669e578322a1d620b2e83595d11.png"></p>
+<h3 id="一些想法"><a href="#一些想法" class="headerlink" title="一些想法"></a>一些想法</h3><ul>
+<li>在保护核心算法方面，算法难度？loader加密？</li>
+<li>视频地址中的key加密因子的安全性？</li>
+<li>H5播放器怎么分析？</li>
+</ul>
+<h3 id="后续…"><a href="#后续…" class="headerlink" title="后续…"></a>后续…</h3><p>后面抽空分析下其他视频，爱奇艺？腾讯？</p>
+<h3 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h3><p>如果想用python实现的，可以参考这几个…</p>
+<blockquote>
+<p>github：<a href="https://github.com/ytdl-org/youtube-dl/" target="_blank" rel="noopener"><strong>youtube-dl</strong></a><br>github：<a href="https://github.com/soimort/you-get" target="_blank" rel="noopener"><strong>you-get</strong></a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/逆向/" rel="tag"># 逆向</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/29/技术分享汇总/" rel="prev" title="技术分享汇总（不定期更新）">
+                技术分享汇总（不定期更新） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/pingtouge.jpg" alt="平头哥">
+            
+              <p class="site-author-name" itemprop="name">平头哥</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yourname" title="GitHub &rarr; https://github.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:yourname@gmail.com" title="E-Mail &rarr; mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://windrunnerlihuan.com" title="http://windrunnerlihuan.com" rel="noopener" target="_blank">欢仔</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+<div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div id="myCanvasContainer" class="widget tagcloud">
+        <canvas width="250" height="250" id="resCanvas" style="width=100%">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qcon/">Qcon</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分享/">分享</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大会/">大会</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/播放器/">播放器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构优化/">架构优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/逆向/">逆向</a><span class="tag-list-count">1</span></li></ul>
+        </canvas>
+    </div>
+</div>
+
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#作案动机"><span class="nav-number">1.</span> <span class="nav-text">作案动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#热身"><span class="nav-number">2.</span> <span class="nav-text">热身</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作案工具"><span class="nav-number">2.1.</span> <span class="nav-text">作案工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SWF脱壳"><span class="nav-number">2.2.</span> <span class="nav-text">SWF脱壳</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见套路"><span class="nav-number">2.3.</span> <span class="nav-text">常见套路</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析播放过程"><span class="nav-number">3.</span> <span class="nav-text">分析播放过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#找出播放地址"><span class="nav-number">3.1.</span> <span class="nav-text">找出播放地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视频地址是谁发出来的"><span class="nav-number">3.2.</span> <span class="nav-text">视频地址是谁发出来的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定位k值"><span class="nav-number">3.3.</span> <span class="nav-text">定位k值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算k值"><span class="nav-number">3.4.</span> <span class="nav-text">计算k值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#脱壳swf"><span class="nav-number">3.5.</span> <span class="nav-text">脱壳swf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#任务：k值算法"><span class="nav-number">3.6.</span> <span class="nav-text">任务：k值算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#任务：key值算法"><span class="nav-number">3.7.</span> <span class="nav-text">任务：key值算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视频dt信息采集"><span class="nav-number">3.8.</span> <span class="nav-text">视频dt信息采集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#任务：验证与实现"><span class="nav-number">3.9.</span> <span class="nav-text">任务：验证与实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造webplay请求"><span class="nav-number">4.</span> <span class="nav-text">构造webplay请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#drag请求"><span class="nav-number">5.</span> <span class="nav-text">drag请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些想法"><span class="nav-number">6.</span> <span class="nav-text">一些想法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后续…"><span class="nav-number">7.</span> <span class="nav-text">后续…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开源项目"><span class="nav-number">8.</span> <span class="nav-text">开源项目</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">平头哥</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'dG5RKkrMOLocXhaqQvbJP2lq-gzGzoHsz',
+    appKey: 'kbWErAlDwlGoI7pyRhQSfPW9',
+    placeholder: '请大胆说出你的想法！',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
